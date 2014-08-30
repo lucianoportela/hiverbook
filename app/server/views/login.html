@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+
+       {{> meta}}
+       {{> css}}
+
+
+
+  <script src="js/script.js"></script>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easydropdown.js"></script>
+  <script src="js/jquery.nivo.slider.js"></script>
+  <script src="js/jquery.magnific-popup.js" ></script>
+  <script src="js/H5F.js" type="text/javascript"></script>
+
+
+  <script src="assets/js/bootstrap.min.js"></script>
+
+
+  <script src="/vendor/jquery.min.js"></script>
+  <script src="/vendor/jquery.form.js"></script>
+  <script src="/vendor/bootstrap-modal.js"></script>
+  <script src="/vendor/bootstrap-transition.js"></script>
+  <script src="js/views/login.js"></script>
+  <script src="js/controllers/loginController.js"></script>
+  <script src="js/form-validators/loginValidator.js"></script>
+  <script src="js/form-validators/emailValidator.js"></script>
+  <script src="js/views/signup.js"></script>
+  <script src="js/controllers/signupController.js"></script>
+  <script src="js/form-validators/accountValidator.js"></script>
+  <script src="js/post.js"></script>
+
+ 
+
+
+
+     </head>
+
+     <body>
+       {{> header_logon}}
+<!--
+       <aside>
+        <div id="welcomebar"  class="nav-collapse ">
+          <br>
+          <ul class="welcomebar-menu" id="nav-accordion">
+            <h5 class="centered">{{t "app.mission"}}</h5>
+          </ul>
+
+        </div>
+      </aside>
+-->
+<div class="content-logon">
+
+      <div style="display: none;" class="alert alert-warning alert-dismissable">
+        <button type="button" data-dismiss="div.alert" aria-hidden="true" class="close">×</button>
+        <div class="alert-title-error"><strong> Warning!</strong></div>
+        <div class="alert-msg-error">
+          <p>Better check yourself, you're not looking too good. </p>
+        </div>
+      </div>
+
+ <div class="form-login-cloud">
+  <div class="font-mission"><p >{{t "app.mission"}}</p> <img src="assets/img/cloud-hiverbook.png" width="400" >  </div>
+          
+        </div>
+
+        
+      <div class="form-login-central">
+       
+
+
+          <form method="post" id="login-form" class="form-login">
+            <div class="login-wrap">
+              <p class="subheading"> </p>
+              <label for="email-tf" class="sr-only"> </label>
+              <input type="email" name="email" id="email-tf" required placeholder="{{t "app.labelEmail"}}" class="form-control"><br>
+              <label for="pass-tf" class="sr-only"></label>
+              <input type="password" name="pass" id="pass-tf" required placeholder="{{t "app.labelPassword"}}" class="form-control"><br>
+              <button type="submit" id="btn-login" class="btn btn-theme btn-block"><i class="fa fa-lock"></i> {{t "app.labelLogin"}}<i class="icon-lock icon-white"></i></button>
+              <label id="remember-me" class="checkbox">{{t "app.labelRememberMe"}}
+                <input type="checkbox" checked="checked"><span class="pull-right"><a href="/lost-password">{{t "app.labelForgotPassword"}}</a></span></label>
+                <div class="login-social-link centered"><a href="/auth/facebook" class="btn btn-facebook"><i class="fa fa-facebook"></i><i> Facebook     </i></a> <a href="/auth/google" class="btn btn-google"><i class="fa fa-google-plus"></i><i> Google+ </i></a></div>
+              </div>
+            </form>
+
+
+ 
+<br>
+
+           <form class="form-signup" id="account-form" method="post" action="/signup">
+            <h2 class="form-signup-heading">{{t "app.labelSingUp"}}</h2>
+            <div class="signup-wrap">
+              <input class=" form-control" id="name-signup-tf" name="name-signup" minlength="2" type="text" placeholder="{{t "app.labelFullName"}}"  required  value="" />
+              <br>
+              <input class="form-control " id="email-signup-tf" type="email" name="email-signup" placeholder="{{t "app.labelEmail"}}"  required value="" />
+              <br>
+              <input type="password" id="pass-signup-tf" name="pass-signup" class="form-control" placeholder="{{t "app.labelPassword"}}" required value="">
+              <br>
+              <button class="btn btn-theme btn-block" id="account-form-btn2"  type="submit">{{t "app.labelCreateAccount"}}</button>
+            </div> 
+          </form> 
+
+  <br>                   
+   
+    </div>
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

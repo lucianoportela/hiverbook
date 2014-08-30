@@ -1,0 +1,79 @@
+
+
+
+<header class="headerhome black-bg">
+  <div class="sidebar-toggle-box">
+
+  </div>
+    <a href="/home" class="logohome"><img class="logohomeimg" src="assets/img/hiverbooklogo.png"  > <b>Hiver<span>book</span></b></a><!--
+    <logo>end</logo>-->
+
+
+
+ <!--
+    <div class="im_dialogs_search">
+      <input class="form-control im_dialogs_search_field" type="search" placeholder="Search" ng-model="search.query"/>
+      <a class="im_dialogs_search_clear" ng-click="search.query = ''" ng-show="search.query.length"></a>
+    </div>
+ -->
+
+<div class="menu_comando">
+      <!--  notification start -->
+      <ul class="nav top-menu">
+        <!-- settings start -->
+
+        <!-- inbox dropdown start-->
+
+        <!-- inbox dropdown end -->
+        <!-- notification dropdown start-->
+        <li id="header_notification_bar" class="dropdown">
+          <a data-toggle="dropdown" class="dropdown-toggle linkBranco" href="">
+          <img
+                                      class="chat-room-photo-sair"
+              {{#if accountData.local.imgpath}}
+                  src="{{accountData.local.imgpath}}"               
+              {{else}}
+                  src="chat/img/users/UserAvatar4@2x.png"
+              {{/if}}/> 
+              <span class="name-user"> {{ trimString accountData.local.name}}</span><span class="caret"></span>
+
+          </a>
+
+
+
+         
+          <ul class="dropdown-menu extended notification">
+            <li>
+              <a href="/home">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/settings">
+                {{t "app.home.settings-item"}}
+              </a>
+            </li>
+            <li>
+              <a href="/secure-logout">{{t "app.home.btn-logout"}}</a>
+            </li>
+          </ul>
+        </li>
+
+
+
+
+
+        <li class="homelink" style=""> <a class="linkBranco" href="/home"><b>Home</b></a></li>
+        <!-- notification dropdown end -->
+      </ul>
+      <!--  notification end -->
+</div>
+
+
+  
+
+
+
+
+  </header>  
+

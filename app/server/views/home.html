@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+
+       {{> meta}}
+       {{> css}}
+       {{> css_chat}}
+       {{> js}}
+
+       {{content.summary}}
+    <script src="js/moment-with-langs.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="js/handlebars.runtime-v1.3.0.js"></script>
+
+
+
+
+
+  <link rel="stylesheet" href="assets/js/file-uploader/css/jquery.fileupload.css">
+  <link rel="stylesheet" href="assets/js/file-uploader/css/jquery.fileupload-ui.css">
+  <noscript>
+    <link rel="stylesheet" href="assets/js/file-uploader/css/jquery.fileupload-noscript.css">
+  </noscript>
+  <noscript>
+    <link rel="stylesheet" href="assets/js/file-uploader/css/jquery.fileupload-ui-noscript.css">
+  </noscript>
+
+
+        <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-fileupload/bootstrap-fileupload.css" />
+
+
+
+
+
+
+
+</head>
+<body>
+  <section id="container">
+    <header> </header>
+  </section>
+
+
+
+
+       {{> header_logado}}
+
+  <section id="main-content" >
+    <section class="wrapper site-min-height" >
+      <div class="chat-room mt" >
+
+
+        <aside class="mid-side">
+
+
+  
+    <div class="separa">
+
+
+      <form id="fileupload" action="javascript:;"  enctype="multipart/form-data">     
+                        <textarea rows="3" id="msg-post" class="form-control" placeholder="{{t "app.home.post-msg"}}" ></textarea>
+
+
+<!-- The file upload form used as target for the file upload widget -->
+  
+
+                        <div class="grey-style">
+                          <div class="pull-left">
+
+                          </div>
+                          <div class="pull-right">  
+                          <input type="hidden" id="from-user-post-id" value="{{accountData._id}}"> 
+                          <input type="hidden" id="from-user-post-name" value="{{accountData.local.name}}"> 
+                          <input type="hidden" id="from-user-post-imgpath" value="{{accountData.local.imgpath}}">   
+                          <span id="btn-img-post" class="btn btn-success fileinput-button">
+                  <i class="fa fa-camera"></i>
+                 <input type="file" id="file"  name="files[]" >
+                  </span>         
+                        
+                            <button id="btn-post" class="btn btn-sm btn-theme">POST</button>             
+                          </div>
+                        </div>
+          
+            <table     class="table table-striped">
+                <tbody id="painelImgPost" class="files">
+
+<tr class="template-upload " style="display:none;" >
+          <td>
+              <span class="preview">
+                
+
+                          <img id="mini_foto_new" class="mini_foto" src="#" class='thumbnailimage' style="height:60px;width:60px" />
+                           
+
+              </span>
+
+          </td>
+          <td>
+              <p class="name"></p>
+              <strong class="error text-danger"><div id="fileName"> </div></strong>
+          </td>
+          <td>
+              <p class="size">Processing...</p>
+              <div id="progress" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+          </td>
+          <td>
+
+     
+              <button id="btnCanceImg" class="btn btn-warning cancel">
+                  <i class="glyphicon glyphicon-trash"></i>
+                  
+              </button>
+  
+          </td>
+      </tr>
+
+
+
+                </tbody>
+            </table>
+     </form>
+
+
+
+  </div>
+
+              <div class="panel-heading">
+
+              </div><! --/panel-heading -->
+
+
+           
+              
+              <div class="panel-body">
+
+               <div class="post-body">
+               <div>
+
+
+
+{{#each posts}}
+
+
+        <div class="recent-activity"> 
+          <div class="col-md-4 centered">
+            <div class="profile-pic">
+              <p><img   src="{{this.owner.imgpath}}" class="img-circle"></p>
+              <h4>1922</h4>
+              <h6>FOLLOWERS</h6>
+
+            </div>
+          </div><! --/col-md-4 -->    
+
+          <div class="col-md-4 profile-text">
+            <h3>{{this.owner.name}}</h3>
+            <h5><time data-momentjs>{{this.posted}}</time> </h5>
+           {{#equal this.imgName  '' }}        
+            {{else}}
+            <p><img   src="/uploads/post/{{this.imgName}}" class="img-post" ></p>
+          {{/equal}}
+            <p>{{this.text}}</p>
+
+            <button class="btn btn-theme"><i class="fa fa-thumbs-up"></i> </button> 
+            <button class="btn btn-theme"><i class="fa fa-users"> 1,200 people</i> </button> 
+          </div><! --/col-md-4 -->
+        </div>  
+{{/each}}
+
+
+
+ 
+
+
+
+
+
+
+                <div class="tab-content">
+                  <div id="overview" class="tab-pane active">
+                    <div class="row">
+                    </div>
+                  </div>
+                  
+                  <div id="contact" class="tab-pane">
+                    <div class="row">
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+ 
+
+        </aside>
+
+        <br>
+
+
+
+        <aside id="chat-tamanho" class="right-side im_history_wrap nano has-scrollbar">
+
+  
+       
+
+  
+          <div class="user-head" id="user-head-users" >
+
+               <h4 class="pull-left">{{t "app.home.menu-contacts"}}</h4>
+                <a href="#" class="btn btn-theme pull-right">+ Invite</a>
+          </div>
+  
+
+          <div class="user-head" id="user-head-private" style="display:none;" >
+            <div style="text-align: center;">                   
+            <span><a onClick="backUsers();" class="chat-tools btn-theme"><i class="fa fa-mail-reply"></i> </a>   </span>
+           <span class="centereduser" id="userNomePrivate"></span>          
+             <img class="im_dialog_photo" id="userImgpathPrivate" src="https://graph.facebook.com/100002689685047/picture?type=large"> 
+            </div>                   
+          </div>
+
+
+
+
+
+   <div class="user-container" id="chatrolagem">         
+
+
+
+
+
+
+       {{#if userFriend}}
+
+
+    <div class="msg-container"> 
+    <input type="hidden" id="id-user-friend" value="{{userFriend._id}}"> 
+    <input type="hidden" id="nome-usuario-friend" value="{{userFriend.local.name}}"> 
+      <input type="hidden" id="to-img-path-friend" value="{{userFriend.local.imgpath}}"> 
+      <input type="hidden" id="from-img-path-friend" value="{{accountData.local.imgpath}}"> 
+
+
+
+
+
+    {{#each user_messages}}
+    <div id="mensagensparticular" class="im_message_wrap clearfix " >
+
+
+      <div id="mens" class="im_content_message_wrap ng-scope {{#equal this.from.id  ../accountData._id }}even{{else}}odd{{/equal}}">
+        <div class="im_content_message_select_area">
+          <i class="icon icon-select-tick"></i>
+        </div>
+
+        <div class="im_message_meta pull-right text-right">
+          <span class="im_message_date" id="then1" data-date="{{this.posted}}">  <time data-momentjs>{{this.posted}}</time> 
+
+
+          </span>
+
+        </div>
+
+        <div class="im_message_body">
+
+        <a  class="im_message_author ng-scope ng-binding" >{{trimStringChat this.owner.name}}</a>
+
+         <div class="im_message_text ng-scope ng-binding  " >{{decode this.text}} </div>
+       </div>
+
+     </div>
+   </div>
+
+
+   {{/each}}     
+
+
+   <script type="text/javascript">
+ // BARRA DE ROLAGEM
+ document.getElementById('chatrolagem').scrollTop = 1000000;
+ 
+
+</script>
+
+
+</div>  
+
+   {{else}}
+         <div class="chat-users-background">
+
+
+
+                 {{#each acctsEvents}}
+        
+                     
+
+
+                <ul class="nav nav-pills nav-stacked" data-name="{{this.to.name}}">
+                  <li  friend="{{json this}}"  class="im_dialog_wrap">
+                    <a id="chatperson" name="{{this.to.name}}" class="im_dialog"   codigo="teste" >
+                     
+
+                      <div class="im_dialog_meta pull-right text-right">
+                        <div class="im_dialog_date ng-binding" id="hora"> <time data-momentjs>{{this.lastPosted}}</time>
+                        </div>
+                      </div>
+                      <div class="im_dialog_photo pull-left">
+                                      <img
+                                        class="im_dialog_photo"
+                                        my-load-thumb
+                                        thumb="contact.userPhoto"
+                {{#equal this.to.imgpath "undefined"}}
+                    src="chat/img/users/UserAvatar4@2x.png"               
+                {{else}}
+                    src="{{this.to.imgpath}}"
+                {{/equal}}
+
+
+                                        
+                                      />
+                      </div>
+                      <div class="im_dialog_message_wrap">
+                        <div class="im_dialog_peer">
+                          <span class="im_dialog_user" ng-bind-html="contact.user.rFullName">{{this.to.name}}</span>
+                        </div>
+                        <div class="im_dialog_message">
+                           <div  class="oi" id="{{this.from.id}}"></div>
+                          {{#equal this.qtd '0' }}
+                         {{else}}
+                              <span class="badge bg-primary">1</span>
+                          {{/equal}}
+                       
+                          <span class="im_dialog_message_text">{{this.message}}  
+
+
+                  
+
+                          </span>
+                        </div>
+                      </div>
+
+
+
+
+                    </a>
+                  </li>
+                </ul>
+
+             {{/each}}
+
+              
+             {{#each accts}}
+        
+                     
+               {{#equal this.local.name  '0' }}
+                 
+                {{else}}
+
+   
+                <ul class="nav nav-pills nav-stacked" data-name="{{this.local.name}}" >
+                  <li friend="{{json this}}" class="im_dialog_wrap" >
+                    <a id="{{this._id}}" name="{{this.local.name}}" class="im_dialog"   >
+                      <div class="im_dialog_meta pull-right text-right">
+                        <div class="im_dialog_date ng-binding" id="hora">
+                        </div>
+                      </div>
+                      <div class="im_dialog_photo pull-left">
+                                      <img
+                                        class="im_dialog_photo"
+                                        my-load-thumb
+                                        thumb="contact.userPhoto"
+                {{#if this.local.imgpath}}
+                    src="{{this.local.imgpath}}"               
+                {{else}}
+                    src="chat/img/users/UserAvatar4@2x.png"
+                {{/if}}
+
+                                        
+                                      />
+                      </div>
+                      <div class="im_dialog_message_wrap">
+                        <div class="im_dialog_peer">
+                          <span class="im_dialog_user" ng-bind-html="contact.user.rFullName">{{this.local.name}}</span>
+                        </div>
+                        <div class="im_dialog_message">
+                          <span class="im_dialog_message_text"></span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                     
+               {{/equal}}
+
+
+             {{/each}}
+</div>
+
+     {{/if}}
+
+
+
+
+
+
+ 
+          </div>
+
+   <input id="nome-usuario" type="hidden" value="{{accountData.local.name}}">
+              <input id="id-usuario" type="hidden" value="{{accountData._id}}">
+
+          <div class="chat-room-head" style="display:none;">
+
+                 <input class="form-control  campo-msg" type="search" placeholder="" style="width:95%;" />
+             
+
+          </div> 
+
+
+
+    <div class="user-footer">
+      <input id="search" class="form-control im_dialogs_search_field" type="search" placeholder="Search" />
+      <a class="im_dialogs_search_clear" ng-click="search.query = ''" ng-show="search.query.length"></a>
+    </div>
+
+  
+
+        </aside>
+
+  
+  
+
+
+      </div>
+    </section>
+  </section>
+
+
+
+
+ {{> footer_js}}
+
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js" class="include"></script>
+
+ 
+
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/chat.js"></script>
+  <script src="js/post.js"  ></script>
+ 
+
+  <script src="assets/js/common-scripts.js"></script>
+
+      <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+             moment.lang('en');
+            $("time[data-momentjs]").each(function (idx, item) {
+                var $item = $(item),          
+                    mdate = moment($item.text(), "MMMM Do YYYY, h:mm:ss a");
+                $item.attr("title", mdate.format('MMMM Do YYYY, h:mm:ss a')).text(mdate.fromNow());
+            });
+        });
+    </script>
+
+
+
+<!-- FUNCIONA A IMAGEM sem funciona a tela --> 
+  
+  <script src="assets/js/advanced-form-components.js"></script>   
+    
+
+ 
+
+</body>
+
+</html>

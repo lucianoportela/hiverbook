@@ -1,0 +1,40 @@
+{
+    "app": {
+        "name": "Localization with Express, Jade and i18next-node",
+        "selectlanguage": "app.selectlanguage",
+        "mission": "app.mission",
+        "german": "app.german",
+        "english": "app.english",
+        "french": "app.french",
+        "spanish": "app.spanish",
+        "portuguese": "app.portuguese",
+        "descriptiontext1": "app.descriptiontext1",
+        "descriptiontext2": "app.descriptiontext2",
+        "informations": "app.informations",
+        "informationtext": "app.informationtext",
+        "infolanguagesmain": "app.infolanguagesmain",
+        "labelCreateAccount": "app.labelCreateAccount",
+        "labelLogin": "app.labelLogin",
+        "labelSingUp": "app.labelSingUp",
+        "labelFullName": "app.labelFullName",
+        "labelPassword": "app.labelPassword",
+        "labelRememberMe": "app.labelRememberMe",
+        "labelForgotPassword": "app.labelForgotPassword",
+        "labelSingUpd": "app.labelSingUpd",
+        "labelEmail": "app.labelEmail",
+        "labelLocation": "app.labelLocation",
+        "labelSettings": "app.labelSettings ",
+        "labelemail": "app.labelemail",
+        "home": {
+            "btn-logout": "home.btn-logout",
+            "btn-messages": "home.btn-messages",
+            "settings-menu": "home.settings-menu",
+            "settings-item": "home.settings-item",
+            "menu-contacts": "app.home.menu-contacts",
+            "post-msg": "app.home.post-msg"
+        },
+        "settings": {
+            "label-photo": "app.settings.label-photo"
+        }
+    }
+}

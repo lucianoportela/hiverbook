@@ -1,0 +1,43 @@
+{
+	"name": "hiverbook",
+	"version": "1.0.0",
+	"description": "Hiverbook is a complete open source social medida built with Node.JS. & MongoDb",
+	"author": {
+		"name": "Luciano Portela",
+		"email": "portela.inf@gmail.com"
+	},
+	"website":{
+		"url": "http://hiverbook.com/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/lucianoportela/hiverbook.git"
+	},
+	"private": true,
+	"dependencies": {
+		"express": "3.0.6",
+		"stylus": "0.31.0",
+		"jade": "0.27.7",
+		"mongodb": "1.2.7",
+		"moment" : "1.7.2",
+		"emailjs": "0.3.3",
+		"socket.io":"latest",
+		"i18next":"latest",
+		"passport":"latest",
+		"passport-facebook":"latest",
+		"passport-google-oauth":"latest",
+		"connect-flash":"latest",
+		"mongoose":"latest",
+		"hbs":"latest",
+		"imagemagick":"latest",
+		"moment":"latest",
+		"crypto":"latest",
+		"html-entities":"latest",
+		"passport-local":"latest",
+		"bcrypt-nodejs":"latest"
+	},
+	"engines": {
+		"node": "0.8.14",
+		"npm":  "1.1.65"
+	}
+}

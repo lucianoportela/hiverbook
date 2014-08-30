@@ -1,0 +1,41 @@
+{
+    "app": {
+        "selectlanguage": "Português",
+        "mission":"Descubra o novo, conheça pessoas com interesses em comum, compartilhe.",
+        "infolanguagesmain": "HiverBook te conecta a diferente línguas:",  
+        "labelCreateAccount": "Criar Conta",
+        "labelLogin": "Entrar",
+        "labelSingUp": "Abra sua conta",
+        "labelFullName": "Nome ",
+        "labelPassword": "Senha",
+        "labelRememberMe": "Conectado",
+        "labelForgotPassword": "Esqueci a senha",  
+        "labelEmail": "E-mail",   
+        "labelSettings": "Configuração de conta",
+        "labelLocation": "Local",   
+        "descriptiontext1": "Ce text est en fraincais.",
+        "descriptiontext2": "Je ne parla pas francais trés bon.",
+        "german": "Alemão",
+        "english": "Ingles",
+        "french": "Frances",
+        "spanish": "Espanhol",
+        "portuguese": "Portuges",
+        "informations": "Informações",
+        "informationtext": "C'est un autre text informative.",
+        "home": {
+            "btn-logout": "Sair",    
+            "btn-messages": "Menssagens",
+            "settings-menu": "Configuração",
+            "settings-item": "Meu perfil",
+            "menu-contacts": "Contatos",
+            "post-msg": "O que você está pensando?"
+
+        },
+        "settings": {
+            "btn-save": "Salvar Alterações",
+            "btn-upload": "Selecionar Imagem",
+            "btn-upload-img": "Trocar",
+            "label-photo": "Foto do perfil"
+        }
+    }
+}

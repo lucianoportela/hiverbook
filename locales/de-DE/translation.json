@@ -1,0 +1,41 @@
+{
+    "app": {
+        "selectlanguage": " Deutsch",
+        "mission": "Anschließen neue Völker in der Welt",
+        "infolanguagesmain": "HiverBook verbindet Sie mit Sprachen in:",   
+        "labelCreateAccount": "Konto erstellen",
+        "labelLogin": "Anmelden",
+        "labelSingUp": "Angemeldet bleiben",
+        "labelFullName": "Name",
+        "labelPassword": "Passwort",
+        "labelRememberMe": "Angemeldet bleiben",
+        "labelForgotPassword": "Passwort vergessen",    
+        "labelEmail": "E-Mail",         
+        "btnCreateAccount": "konto erstellen",
+        "labelSettings": "Kontoeinrichtung ",
+        "labelLocation": "Lokal",  
+        "descriptiontext1": "Dieser Text ist deutsch. Er wurde aus der Resource 'descriptiontext1' des Resourcenverzeichnisses 'de-DE' generiert",
+        "descriptiontext2": "Hier ein zweiter Absatz generiert aus der Resource 'descriptiontext2'",
+        "german": "Deutsch",
+        "english": "Englisch",
+        "french": "Französich",
+        "spanish": "Spanisch",
+        "portuguese": "Portugiesisch",
+        "informations": "Informationen",
+        "informationtext": "Hier ein weiterer Informationstext. Der Banner Text der Seite bleibt für alle Sprachen gleich. Er wird nur einmal festgelegt in der Resource 'app.name' im übergreifenden Resourcenverzeichnis 'dev'",
+        "home": {
+            "btn-logout": "Abmelden",    
+            "btn-messages": "Nachrichten",
+            "settings-menu": "Einstellungen",
+            "settings-item": "Mein Profil",
+            "menu-contacts": "Kontakte",
+            "post-msg": "Was machst du gerade?"
+        },
+        "settings": {
+            "btn-save": "Speichern",
+            "btn-upload": "Bild auswählen",
+            "btn-upload-img": "Change",
+            "label-photo": "Profil-Foto"
+        }
+    }
+}

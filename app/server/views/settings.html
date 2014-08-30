@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+
+       {{> meta}}
+       {{> css}}
+       {{> css_chat}}
+       
+        <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-fileupload/bootstrap-fileupload.css" />
+       {{> js}}
+
+
+
+
+        
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+</head>
+<body>
+
+ {{> header_logado}}
+  <section id="" >
+  <!--
+  <header>end</header>
+  <sidebar>start</sidebar>-->
+
+
+       
+<!--
+  <sidebar>end</sidebar>
+  <main>content start</main>-->
+  
+     <br></br>
+     <br></br>
+
+
+      
+
+      <div class="form-central">
+      <div style="display: none;" class="alert alert-warning alert-dismissable">
+        <button type="button" data-dismiss="div.alert" aria-hidden="true" class="close">×</button>
+        <div class="alert-title-error"><strong> Warning!</strong></div>
+        <div class="alert-msg-error">
+          <p>Better check yourself, you're not looking too good. </p>
+        </div>
+      </div>
+
+
+
+
+
+           <form  method="post" id="account-form-settings" class="form-horizontal style-form"  action="/settings">
+            <h2 class="form-signup-heading">{{t "app.labelSettings"}}
+
+
+
+            </h2>
+
+
+            <div class="signup-wrap">
+              <input class=" form-control" id="name-signup-tf" name="name-signup" minlength="2" type="text" placeholder="{{t "app.labelFullName"}}"  required value="{{accountData.local.name}}" />
+              <br>
+              <input class="form-control " id="email-signup-tf" type="email" name="email-signup" placeholder="{{t "app.labelEmail"}}"  required value="{{accountData.local.email}}" />
+              <br>
+              <input type="password" id="pass-signup-tf" name="pass-signup" class="form-control" placeholder="{{t "app.labelPassword"}}" required value=" "  >
+              <br>
+
+
+
+  
+                                                  
+          
+              <div class="form-group last">
+                <label class="control-label col-md-3">{{t "app.settings.label-photo"}}</label>
+                <div class="col-md-9">
+                  <div class="fileupload fileupload-new" data-provides="fileupload">
+                    <div class="fileupload-new thumbnail" style="width: 100px; height: 100px;border-radius:50px;background:#CCCCCC">
+
+
+
+                      
+                      <img
+                      style="width: 100px; height: 100px;border-radius:50px"
+                      
+                      {{#if accountData.local.imgpath}}
+                      src="{{accountData.local.imgpath}}"               
+                      {{else}}
+                      src="chat/img/users/UserAvatar4@2x.png"
+                      {{/if}}
+
+
+                      
+                      />
+                      
+
+                      
+                      
+
+                    </div>
+                    <div class="fileupload-preview fileupload-exists thumbnail" style="border-radius: 50px;height: 100px;width: 100px;background:#CCCCCC"></div>
+                    <div>
+                      <span class="btn btn-theme02 btn-file">
+                        <span class="fileupload-new"><i class="fa fa-paperclip"></i> {{t "app.settings.btn-upload"}}</span>
+                        <span class="fileupload-exists"><i class="fa fa-undo"></i> {{t "app.settings.btn-upload-img"}}</span>
+                        <input type="file"  name='imagem' id='imagem-rf' class="default" />
+                      </span>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+               <input type="hidden"  name="img"  id='img'  value="{{accountData.local.imgpath}}" />
+
+               <input type="hidden"  name="_id"  id='_id'  value="{{accountData._id}}" />
+
+              <button class="btn btn-theme btn-block" id="account-form-btn2"  type="submit">{{t "app.settings.btn-save"}}</button>
+            </div>  
+          </form> 
+
+         
+        </div>
+
+
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="text-center">2014 - HiverBook<a href="  #" class="go-top"><i class="fa fa-angle-up"></i></a></div>
+  </footer>
+
+
+
+
+
+
+  <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="assets/js/jquery.scrollTo.min.js"></script>
+  <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+  <script src="assets/js/common-scripts.js"></script>
+  <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap-fileupload/bootstrap-fileupload.js"></script> 
+
+  
+  
+  <script src="assets/js/advanced-form-components.js"></script>    
+    
+    
+  <script>
+      //custom select box
+
+      $(function(){
+          $('select.styled').customSelect();
+      });
+
+  </script>
+
+
+
+
+
+
+</body>
+
+</html>
